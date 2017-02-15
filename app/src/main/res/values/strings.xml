@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">aLexa</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_about">About</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="ok">OK</string>
+    <string name="processing">Processing&#8230;</string>
+    <string name="initializing">Initializing Alexa&#8230;</string>
+    <string name="title_activity_login_web_view">Login</string>
+    <string name="tutorial_text">Tap on the mic button and speak.\n\n Ask questions like: \n
+    Who is the CEO of Amazon? \n
+    Who is the president of USA? \n
+    Where is the Niagara Fall? \n
+    etc.</string>
+    <string name="do_not_show">Got it. Do not show it again.</string>
+</resources>

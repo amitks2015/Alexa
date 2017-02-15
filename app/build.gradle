@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'alexa_key'
+            keyPassword 'amit16'
+            storeFile file('../android.jks')
+            storePassword 'alexa16'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.mot.alexa"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 100
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile(name: 'alexalibrary-release', ext: 'aar')
+    compile(name: 'speechutils-release', ext: 'aar')
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.5.0'
+    compile 'com.google.code.gson:gson:2.4'
+    compile files('libs/org.apache.commons.io.jar')
+}
